@@ -41,6 +41,10 @@
 		font-weight: 800;
 		line-height: 30.6px;
 		text-align: left;
+
+		@media (max-width: 1000px) {
+			min-width: auto;
+		}
 	}
 
 	&--animated {
