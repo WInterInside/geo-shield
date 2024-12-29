@@ -1,0 +1,66 @@
+.breadcrumbs {
+	display: flex;
+	margin-top: 13px;
+
+	@media (max-width: 1000px) {
+		overflow-x: scroll;
+		&::-webkit-scrollbar,
+		&::-webkit-scrollbar-thumb {
+			display: none;
+		}
+	}
+
+	& a {
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 18.2px;
+		color: #555555;
+
+		@media (max-width: 700px) {
+			font-size: 10px;
+			line-height: 14px;
+		}
+	}
+
+	.breadcrumb_font_style {
+		margin-right: 10px;
+	}
+
+	.breadcrumb_font_dash {
+		color: #555555;
+	}
+
+	& ol {
+		flex-shrink: 0;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		align-items: center;
+		width: max-content;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 18.2px;
+		color: #555555;
+
+		@media (max-width: 700px) {
+			font-size: 10px;
+			line-height: 14px;
+		}
+	}
+
+	& ol li:not(:last-child) {
+		margin-right: 10px;
+	}
+
+	& ol li:last-child {
+		.breadcrumb_font_style {
+			margin-right: 10px;
+			color: #555555;
+		}
+	}
+
+	.span_m_l_20 {
+		margin-left: 15px;
+	}
+}
