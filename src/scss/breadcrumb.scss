@@ -1,9 +1,12 @@
 .breadcrumbs {
 	display: flex;
+	position: relative;
+	z-index: 1;
 	margin-top: 13px;
 
 	@media (max-width: 1000px) {
 		overflow-x: scroll;
+		
 		&::-webkit-scrollbar,
 		&::-webkit-scrollbar-thumb {
 			display: none;
@@ -14,7 +17,7 @@
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 18.2px;
-		color: #555555;
+		color: #FFFFFFA3;
 
 		@media (max-width: 700px) {
 			font-size: 10px;
@@ -27,7 +30,7 @@
 	}
 
 	.breadcrumb_font_dash {
-		color: #555555;
+		color: #FFFFFFA3;
 	}
 
 	& ol {
@@ -41,7 +44,7 @@
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 18.2px;
-		color: #555555;
+		color: #FFFFFF52;
 
 		@media (max-width: 700px) {
 			font-size: 10px;
@@ -56,7 +59,7 @@
 	& ol li:last-child {
 		.breadcrumb_font_style {
 			margin-right: 10px;
-			color: #555555;
+			color: #FFFFFF52;
 		}
 	}
 

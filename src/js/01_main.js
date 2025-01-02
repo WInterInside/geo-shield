@@ -243,3 +243,134 @@ $(document).ready(function () {
 	});
 	});
 });
+
+$(document).ready(function() {
+	// Функция для проверки видимости блока
+	function isElementInViewport(el) {
+		var rect = el.getBoundingClientRect();
+
+		return (
+		rect.top < window.innerHeight && // Верхняя граница блока выше нижней границы окна
+		rect.bottom > 0 &&               // Нижняя граница блока ниже верхней границы окна
+		rect.left < window.innerWidth && // Левая граница блока левее правой границы окна
+		rect.right > 0                   // Правая граница блока правее левой границы окна
+		);
+	}
+
+	// Функция для анимации
+	function animateDescriptionItems() {
+		const items = $('.description__item');
+
+		if (!items.length) { // Если блоков нет, то ничего не делаем
+			return;
+		}
+
+		let currentIndex = 0;
+
+		setInterval(() => {
+			items.removeClass('is-current'); // Убираем текущий класс у всех элементов
+
+			// Проверяем видимость текущего элемента
+			if (isElementInViewport(items[currentIndex])) {
+				items.eq(currentIndex).addClass('is-current'); // Добавляем класс текущему элементу
+
+				currentIndex++;
+				if (currentIndex >= items.length) {
+					currentIndex = 0;
+				}
+			}
+		}, 2000); // Переключаем каждые 2 секунды
+	}
+
+
+	// Функция для анимации
+	function animateDescriptionItemsSteps() {
+		const items = $('.map__step');
+
+		if (!items.length) { // Если блоков нет, то ничего не делаем
+			return;
+		}
+
+		let currentIndex = 0;
+
+		if ($(window).width() < 1300) {
+
+			setInterval(() => {
+				items.removeClass('is-current'); // Убираем текущий класс у всех элементов
+
+				// Проверяем видимость текущего элемента
+				if (isElementInViewport(items[currentIndex])) {
+					items.eq(currentIndex).addClass('is-current'); // Добавляем класс текущему элементу
+
+					currentIndex++;
+					if (currentIndex >= items.length) {
+						currentIndex = 0;
+					}
+				}
+			}, 2000); // Переключаем каждые 2 секунды
+
+		} else {
+			return;
+		}
+	}
+
+	// Запускаем анимацию при загрузке страницы
+	animateDescriptionItems();
+	animateDescriptionItemsSteps();
+});
+
+$(document).ready(function() {
+    if ($(".faq").length > 0) { // Проверяем наличие блока с классом "faq"
+        // Находим первый элемент details и открываем его
+        $("details").first().attr("open", true);
+
+        $("details").on("click", function(event) {
+            let $this = $(this);
+
+            if (!$this.attr("open")) { // Если элемент не открыт
+                $("details").not($this).removeAttr("open"); // Закрываем все остальные элементы
+            }
+        });
+    }
+});
+$(document).ready(function () {
+    var $slider = $('.docs__slider');
+
+    // Инициализация слайдера
+	$slider.slick({
+		dots: false,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 5,
+		arrows: false, // Отключаем встроенные стрелки Slick Slider
+		centerMode: true, // Центрирование слайдов
+		variableWidth: true, // Разрешаем разные ширины слайдов
+		focusOnSelect: true, // Фокусировка на выбранном слайде
+		centerPadding: '10px', // Отступы между слайдами
+		autoplay: true,       // Включаем автоплей
+		autoplaySpeed: 3000,  // Интервал смены слайдов – 3 секунды
+		responsive: [
+			{
+				breakpoint: 1000, // При ширине экрана 1000 пикселей
+				settings: {
+					slidesToShow: 3 // Показываем 3 слайда
+				}
+			},
+			{
+				breakpoint: 900, // При ширине экрана 600 пикселей
+				settings: {
+					slidesToShow: 1 // Показываем 2 слайда
+				}
+			}
+		]
+	});
+
+    // Обработчики для кнопок
+    $('.prev').on('click', function () {
+        $slider.slick('slickPrev');
+    });
+
+    $('.next').on('click', function () {
+        $slider.slick('slickNext');
+    });
+});

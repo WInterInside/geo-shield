@@ -28,7 +28,11 @@
 	}
 
 	&__main {
-		padding: 34px 0;
+		padding: 64px 0;
+
+		@media only screen and (max-width: 1300px) {
+			padding: 34px 0;
+		}
 	}
 
 	&__nav {
