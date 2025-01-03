@@ -1,7 +1,7 @@
 .hero {
 	position: relative;
 	width: 100%;
-	min-height: 100vh;
+	min-height: calc(100vh - 130px);
 	background-image: url("../img/hero-bg.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -113,6 +113,7 @@
 			font-weight: 600;
 			line-height: 81.6px;
 			text-align: left;
+			align-self: flex-start;
 
 			@media (max-width: 1500px) {
 				font-size: 100px;
@@ -181,5 +182,9 @@
 
 	&--about {
 		background-image: url("../img/about-bg.jpg");
+	}
+
+	&--devices {
+		background-image: url("../img/devices-bg.jpg");
 	}
 }

@@ -243,6 +243,164 @@
   }
 }
 @charset "UTF-8";
+.devices__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.devices__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 64px;
+}
+@media only screen and (max-width: 1500px) {
+  .devices__wrapper {
+    gap: 34px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .devices__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 24px;
+  }
+}
+.devices__item {
+  padding: 64px 0;
+}
+.devices__item h2 {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 53.55px;
+  text-align: left;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 1000px) {
+  .devices__item h2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 33.55px;
+    margin: 2rem 0;
+  }
+}
+.devices__item ul {
+  padding-left: 1rem;
+}
+.devices__item li {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  margin-bottom: 1rem;
+}
+.devices__preview {
+  position: relative;
+  width: calc(36% - 32px);
+  height: 550px;
+  border: 1px solid rgba(24, 25, 31, 0.1607843137);
+  border-radius: 16px;
+  overflow: hidden;
+}
+@media only screen and (max-width: 1500px) {
+  .devices__preview {
+    height: 450px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .devices__preview {
+    width: 100%;
+    height: 350px;
+  }
+}
+.devices__preview img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  padding: 35px 50px 0 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media only screen and (max-width: 1500px) {
+  .devices__preview img {
+    padding: 16px 20px 0 20px;
+  }
+}
+.devices__content {
+  width: calc(64% - 32px);
+}
+@media only screen and (max-width: 1000px) {
+  .devices__content {
+    width: 100%;
+  }
+}
+.devices details {
+  overflow: hidden; /* Скрываем избыточное содержимое */
+  padding: 24px;
+  padding-left: 0;
+  background-color: rgba(255, 255, 255, 0.6392156863);
+}
+.devices details:last-child {
+  border-top: 2px solid rgba(24, 25, 31, 0.1607843137);
+  border-bottom: 2px solid rgba(24, 25, 31, 0.1607843137);
+}
+@media only screen and (max-width: 1200px) {
+  .devices details {
+    padding: 16px;
+  }
+}
+.devices details > div {
+  padding: 24px 40px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  text-align: left;
+}
+@media only screen and (max-width: 1200px) {
+  .devices details > div {
+    padding: 16px 0;
+  }
+}
+.devices summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+  list-style: none; /* Убрать маркеры */
+}
+.devices summary::-webkit-details-marker {
+  display: none; /* Скрыть стандартный маркер */
+}
+.devices summary::before {
+  content: "+"; /* Добавить знак + */
+  color: #CC423F;
+  font-size: 30px;
+  margin-right: 24px;
+}
+@media only screen and (max-width: 1200px) {
+  .devices summary::before {
+    font-size: 24px;
+    margin-right: 14px;
+  }
+}
+.devices details[open] summary::before {
+  content: "-"; /* Изменить на знак - при открытии */
+}
+@charset "UTF-8";
 .docs {
   margin: 100px 0;
   padding: 0 76px;
@@ -905,6 +1063,9 @@ form .checkbox label input:checked + span:after {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
+.header__nav a.is-current {
+  color: #CC423F;
+}
 @media only screen and (max-width: 1600px) {
   .header__nav a {
     font-size: 15px;
@@ -1109,7 +1270,7 @@ body.is-scrolled .header__wrapper {
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 130px);
   background-image: url("../img/hero-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -1232,6 +1393,8 @@ body.is-scrolled .header__wrapper {
   font-weight: 600;
   line-height: 81.6px;
   text-align: left;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 @media (max-width: 1500px) {
   .hero--page .hero__main-text {
@@ -1304,6 +1467,9 @@ body.is-scrolled .header__wrapper {
 }
 .hero--about {
   background-image: url("../img/about-bg.jpg");
+}
+.hero--devices {
+  background-image: url("../img/devices-bg.jpg");
 }
 .map {
   background-color: #18191F;

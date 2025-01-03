@@ -93,6 +93,10 @@
 			color: #393939;
 			transition: color .3s;
 
+			&.is-current {
+				color: #CC423F;
+			}
+
 			@media only screen and (max-width: 1600px) {
 				font-size: 15px;
 				line-height: 20px;

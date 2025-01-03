@@ -120,35 +120,35 @@ $(document).ready(function () {
 });
 
 $(document).ready(function() {
-    var $bigSlider = $('.big-slider');
-    var $smallSlider = $('.small-slider');
+	var $bigSlider = $('.big-slider');
+	var $smallSlider = $('.small-slider');
 
-    $bigSlider.slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.small-slider'
-    });
+	$bigSlider.slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.small-slider'
+	});
 
-    $smallSlider.slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        asNavFor: '.big-slider',
-        dots: false,
-        arrows: false,
-        centerMode: false,
-        focusOnSelect: true
-    });
+	$smallSlider.slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		asNavFor: '.big-slider',
+		dots: false,
+		arrows: false,
+		centerMode: false,
+		focusOnSelect: true
+	});
 
-    // Кастомные кнопки управления
-    $('.prev').on('click', function() {
-        $smallSlider.slick('slickPrev');
-    });
+	// Кастомные кнопки управления
+	$('.prev').on('click', function() {
+		$smallSlider.slick('slickPrev');
+	});
 
-    $('.next').on('click', function() {
-        $smallSlider.slick('slickNext');
-    });
+	$('.next').on('click', function() {
+		$smallSlider.slick('slickNext');
+	});
 });
 
 $(document).ready(function () {
@@ -205,20 +205,20 @@ $(document).ready(function () {
 			autoplay: false,
 			autoplaySpeed: 3000,
 			responsive: [
-			  {
+			{
 				breakpoint: 1300,
 				settings: {
-				  slidesToShow: 2
+				slidesToShow: 2
 				}
-			  },
-			  {
+			},
+			{
 				breakpoint: 900,
 				settings: {
-				  slidesToShow: 1
+				slidesToShow: 1
 				}
-			  }
+			}
 			]
-		  });
+		});
 	} else {
 		currentSlider.slick({
 			dots: true,
@@ -320,23 +320,24 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    if ($(".faq").length > 0) { // Проверяем наличие блока с классом "faq"
-        // Находим первый элемент details и открываем его
-        $("details").first().attr("open", true);
+	if ($(".faq").length > 0) { // Проверяем наличие блока с классом "faq"
+		// Находим первый элемент details и открываем его
+		$("details").first().attr("open", true);
 
-        $("details").on("click", function(event) {
-            let $this = $(this);
+		$("details").on("click", function(event) {
+			let $this = $(this);
 
-            if (!$this.attr("open")) { // Если элемент не открыт
-                $("details").not($this).removeAttr("open"); // Закрываем все остальные элементы
-            }
-        });
-    }
+			if (!$this.attr("open")) { // Если элемент не открыт
+				$("details").not($this).removeAttr("open"); // Закрываем все остальные элементы
+			}
+		});
+	}
 });
-$(document).ready(function () {
-    var $slider = $('.docs__slider');
 
-    // Инициализация слайдера
+$(document).ready(function () {
+	var $slider = $('.docs__slider');
+
+	// Инициализация слайдера
 	$slider.slick({
 		dots: false,
 		infinite: true,
@@ -365,12 +366,41 @@ $(document).ready(function () {
 		]
 	});
 
-    // Обработчики для кнопок
-    $('.prev').on('click', function () {
-        $slider.slick('slickPrev');
-    });
+	// Обработчики для кнопок
+	$('.prev').on('click', function () {
+		$slider.slick('slickPrev');
+	});
 
-    $('.next').on('click', function () {
-        $slider.slick('slickNext');
-    });
+	$('.next').on('click', function () {
+		$slider.slick('slickNext');
+	});
+});
+
+$(document).ready(function () {
+	// Находим все элементы с классом devices__item
+	$('.devices__item').each(function () {
+		// Находим первый элемент details внутри блока
+		var firstDetails = $(this).find('details')[0];
+
+		if (firstDetails) {
+			// Открываем первый элемент details
+			firstDetails.open = true;
+		}
+	});
+});
+
+// подсветка текущей станици в навигации - мб стоит подобрать другую реализацию, стили для класса написаны.
+$(document).ready(function () {
+	// Получаем текущий URL страницы
+	var currentUrl = window.location.pathname;
+
+	// Находим все ссылки внутри списка навигации
+	$('nav ul li a').each(function () {
+		var $this = $(this);
+
+		if ($this.attr('href') === currentUrl || $this.prop('href') === window.location.href) {
+			// Если ссылка совпадает с текущей страницей, добавляем ей класс is-current
+			$this.addClass('is-current');
+		}
+	});
 });
