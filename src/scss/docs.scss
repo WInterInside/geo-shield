@@ -5,6 +5,8 @@
 
 	@media (max-width: 950px) {
 		padding: 0;
+
+		margin: 40px 0;
 	}
 
 	& h2 {
@@ -16,8 +18,9 @@
 		text-transform: uppercase;
 
 		@media (max-width: 950px) {
-			font-size: 44px;
-			line-height: 51.6px;
+			font-size: 34px;
+			line-height: 41.6px;
+			margin-bottom: 24px;
 		}
 	}
 
