@@ -181,12 +181,17 @@ button::-moz-selection {
 
 /* Modern Browsers */
 ::placeholder {
-	font-family: Nunito Sans;
-	font-size: 15px;
+	font-family: Onest;
+	font-size: 20px;
 	font-weight: 400;
-	line-height: 21px;
+	line-height: 25.5px;
+	color: #18191F;
 	text-align: left;
-	color: #fff;
+
+	@media only screen and (max-width: 1200px) {
+		font-size: 12px;
+		line-height: 14px;
+	}
 }
 
 /* WebKit, Edge */
@@ -194,8 +199,13 @@ button::-moz-selection {
 	font-family: Onest;
 	font-size: 20px;
 	font-weight: 400;
-	line-height: 25.5px;	
+	line-height: 25.5px;
 	color: #18191F;
+
+	@media only screen and (max-width: 1200px) {
+		font-size: 12px;
+		line-height: 14px;
+	}
 }
 
 /* Firefox 4-18 */
@@ -203,9 +213,14 @@ button::-moz-selection {
 	font-family: Onest;
 	font-size: 20px;
 	font-weight: 400;
-	line-height: 25.5px;	
+	line-height: 25.5px;
 	color: #18191F;
 	opacity: 1; /* Override default Firefox opacity */
+
+	@media only screen and (max-width: 1200px) {
+		font-size: 12px;
+		line-height: 14px;
+	}
 }
 
 /* Firefox 19+ */
@@ -213,9 +228,14 @@ button::-moz-selection {
 	font-family: Onest;
 	font-size: 20px;
 	font-weight: 400;
-	line-height: 25.5px;	
+	line-height: 25.5px;
 	color: #18191F;
 	opacity: 1; /* Override default Firefox opacity */
+
+	@media only screen and (max-width: 1200px) {
+		font-size: 12px;
+		line-height: 14px;
+	}
 }
 
 /* IE 10-11 */
@@ -223,8 +243,13 @@ button::-moz-selection {
 	font-family: Onest;
 	font-size: 20px;
 	font-weight: 400;
-	line-height: 25.5px;	
+	line-height: 25.5px;
 	color: #18191F;
+
+	@media only screen and (max-width: 1200px) {
+		font-size: 12px;
+		line-height: 14px;
+	}
 }
 
 /* Edge */
@@ -232,8 +257,13 @@ button::-moz-selection {
 	font-family: Onest;
 	font-size: 20px;
 	font-weight: 400;
-	line-height: 25.5px;	
+	line-height: 25.5px;
 	color: #18191F;
+
+	@media only screen and (max-width: 1200px) {
+		font-size: 12px;
+		line-height: 14px;
+	}
 }
 
 .scrollable-container {
