@@ -1,29 +1,24 @@
 .pager {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	margin-top: 30px;
 	gap: 8px;
-
-	@media (max-width: 650px) {
-		justify-content: center;
-	}
 
 	&__number {
 		display: flex;
 		flex-shrink: 0;
 		align-items: center;
 		justify-content: center;
-		width: 50px;
-		height: 50px;
-		border-radius: 50%;
+		width: 56px;
+		height: 56px;
+		border-radius: 16px;
 
-		font-family: Onest;
-		font-size: 14px;
-		font-weight: 600;
-		line-height: 17.85px;
-		color: #AA804F;
-
-		background-color: #F3F0E2;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 30px;
+		
+		color: #18191FA3;
 		transition: opacity .5s;
 
 		@media (hover: hover) {
@@ -40,6 +35,7 @@
 		@media (max-width: 399px) {
 			width: 30px;
 			height: 30px;
+			border-radius:  8px;
 		}
 	}
 
@@ -49,7 +45,6 @@
 		justify-content: center;
 		width: 50px;
 		height: 50px;
-		font-family: Onest;
 		font-size: 14px;
 		font-weight: 600;
 		line-height: 17.85px;
@@ -58,7 +53,7 @@
 
 	.current {
 		color: #FFFFFF;
-		background-color: #DFC195;
+		background-color: #CC423F;
 		pointer-events: none;
 	}
 
@@ -68,7 +63,7 @@
 	}
 
 	&__icon {
-		border: solid #AA804F;
+		border: solid #18191FA3;
 		border-width: 0 2px 2px 0;
 		padding: 2px;
 		border-radius: 0;
@@ -88,11 +83,6 @@
 		height: 40px;
 		background-color: #ffffff;
 		cursor: pointer;
-
-		@media (hover: hover) {
-			&:hover {
-			}
-		}
 	}
 	
 	&__prev {

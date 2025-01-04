@@ -44,13 +44,15 @@
 
 /* Добавляем свою иконку */
 	.fancybox-button::before {
-		content: ''; /* Путь к вашей иконке */
+		content: 'X'; /* Путь к вашей иконке */
 		display: inline-block;
 		width: 12px; /* Ширина иконки */
 		height: 12px; /* Высота иконки */
-		background-image: url("../img/modal-close.svg");
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center center;
+		color: #CC423F;
 	}
+}
+
+body .fancybox-content {
+	padding: 0 !important;
+	background-color: #181C1D;
 }

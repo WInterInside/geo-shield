@@ -127,7 +127,7 @@ body.compensate-for-scrollbar {
     outline: none;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 44px;
+    padding: 0;
     position: absolute;
     text-align: center;
     top: 0;
@@ -173,7 +173,7 @@ body.compensate-for-scrollbar {
     max-width: 100%;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 44px;
+    padding: 0;
     position: relative;
     text-align: left;
     vertical-align: middle;
