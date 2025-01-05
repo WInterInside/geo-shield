@@ -170,6 +170,9 @@
 		margin-top: 0px;
 
 		&-item {
+			opacity: 0;
+			transition: opacity .3s;
+
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
@@ -196,6 +199,10 @@
 				line-height: 38.25px;
 				text-align: left;
 				text-transform: uppercase;
+			}
+
+			&.is-visible {
+				opacity: 1;
 			}
 		}
 

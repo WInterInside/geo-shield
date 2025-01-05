@@ -12,12 +12,12 @@
 		justify-content: center;
 		width: 56px;
 		height: 56px;
-		border-radius: 16px;
+		border-radius: 8px;
 
 		font-size: 20px;
 		font-weight: 500;
 		line-height: 30px;
-		
+
 		color: #18191FA3;
 		transition: opacity .5s;
 
@@ -35,7 +35,6 @@
 		@media (max-width: 399px) {
 			width: 30px;
 			height: 30px;
-			border-radius: 8px;
 		}
 	}
 
@@ -84,7 +83,7 @@
 		background-color: #ffffff;
 		cursor: pointer;
 	}
-	
+
 	&__prev {
 		.pager__icon {
 			transform: rotate(135deg);

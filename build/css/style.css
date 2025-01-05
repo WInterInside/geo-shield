@@ -2057,6 +2057,9 @@ body.is-scrolled .header__wrapper {
   margin-top: 0px;
 }
 .map__data-item {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2093,6 +2096,9 @@ body.is-scrolled .header__wrapper {
   line-height: 38.25px;
   text-align: left;
   text-transform: uppercase;
+}
+.map__data-item.is-visible {
+  opacity: 1;
 }
 .map__data-heading h2 {
   font-size: 72px;
@@ -2505,7 +2511,7 @@ body .fancybox-content {
           justify-content: center;
   width: 56px;
   height: 56px;
-  border-radius: 16px;
+  border-radius: 8px;
   font-size: 20px;
   font-weight: 500;
   line-height: 30px;
@@ -2525,7 +2531,6 @@ body .fancybox-content {
   .pager__number {
     width: 30px;
     height: 30px;
-    border-radius: 8px;
   }
 }
 .pager__dots {
