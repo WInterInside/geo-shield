@@ -85,7 +85,8 @@
 	}
 
 	&__nav {
-		& a {
+		& a,
+		& h3 {
 			white-space: nowrap;
 			font-size: 18px;
 			font-weight: 500;
@@ -108,13 +109,7 @@
 			}
 		}
 
-		@media (hover: hover) {
-			& a:hover  {
-				color: #CC423F;
-			}
-		}
-
-		& ul  {
+		& ul:first-child {
 			list-style: none;
 			padding: 0;
 			margin: 0;
@@ -133,6 +128,71 @@
 				justify-content: center;
 				align-items: center;
 				margin: 0;
+			}
+		}
+
+		& ul:nth-child(2) {
+			display: flex;
+			gap: 1rem;
+			flex-direction: column;
+			width: max-content;
+			list-style: none;
+			position: absolute;
+			top: 70px;
+			left: auto;
+			padding: 20px;
+			margin: 0;
+			border-radius: 10px;
+			background-color: #ffffff;
+			border: 1px solid #393939;
+			pointer-events: none;
+			opacity: 0;
+			transition: opacity .3s;
+
+			@media only screen and (max-width: 1000px) {
+				position: relative;
+				justify-content: center;
+				align-items: center;
+				gap: 10px;
+				opacity: 1;
+				pointer-events: auto;
+				background-color: transparent;
+				top: auto;
+				padding: 0;
+				border: none;
+			}
+		}
+
+		&-caption {
+			position: relative;
+			display: flex;
+			gap: 8px;
+			cursor: pointer;
+			transition: opacity .3s, color .3s;
+
+			& svg path {
+				transition: stroke .3s;
+			}
+
+			& svg {
+				transition: transform .3s;
+			}
+
+			@media only screen and (max-width: 1000px) {
+				display: none;
+			}
+		}
+
+		@media (hover: hover) {
+			& a:hover,
+			& h3:hover{
+				color: #CC423F;
+			}
+
+			.header__nav-caption:hover {
+				& svg path {
+					stroke: #CC423F;
+				}
 			}
 		}
 	}
@@ -242,6 +302,29 @@ body.is-nav-open {
 
 	.header__burger {
 		box-shadow: inset 0px 0px 6px 1px #000000;
+	}
+}
+
+body.is-sub-nav-open {
+	.header__nav {
+		& ul:nth-child(2) {
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+		&-caption {
+			& svg {
+				transform: rotate(180deg);
+			}
+
+			& h3 {
+				color: #CC423F;
+			}
+
+			& svg path {
+				stroke: #CC423F;
+			}
+		}
 	}
 }
 

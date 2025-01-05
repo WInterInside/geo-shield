@@ -1345,7 +1345,7 @@ form .checkbox label input:checked + span:after {
   width: 100%;
   height: 100%;
 }
-.header__nav a {
+.header__nav a, .header__nav h3 {
   white-space: nowrap;
   font-size: 18px;
   font-weight: 500;
@@ -1354,27 +1354,22 @@ form .checkbox label input:checked + span:after {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-.header__nav a.is-current {
+.header__nav a.is-current, .header__nav h3.is-current {
   color: #CC423F;
 }
 @media only screen and (max-width: 1600px) {
-  .header__nav a {
+  .header__nav a, .header__nav h3 {
     font-size: 15px;
     line-height: 20px;
   }
 }
 @media only screen and (max-width: 1000px) {
-  .header__nav a {
+  .header__nav a, .header__nav h3 {
     font-size: 18px;
     line-height: 22px;
   }
 }
-@media (hover: hover) {
-  .header__nav a:hover {
-    color: #CC423F;
-  }
-}
-.header__nav ul {
+.header__nav ul:first-child {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -1388,13 +1383,13 @@ form .checkbox label input:checked + span:after {
   margin: 0 32px;
 }
 @media only screen and (max-width: 1600px) {
-  .header__nav ul {
+  .header__nav ul:first-child {
     gap: 20px;
     margin: 0 20px;
   }
 }
 @media only screen and (max-width: 1000px) {
-  .header__nav ul {
+  .header__nav ul:first-child {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1406,6 +1401,83 @@ form .checkbox label input:checked + span:after {
         -ms-flex-align: center;
             align-items: center;
     margin: 0;
+  }
+}
+.header__nav ul:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  list-style: none;
+  position: absolute;
+  top: 70px;
+  left: auto;
+  padding: 20px;
+  margin: 0;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 1px solid #393939;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+@media only screen and (max-width: 1000px) {
+  .header__nav ul:nth-child(2) {
+    position: relative;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 10px;
+    opacity: 1;
+    pointer-events: auto;
+    background-color: transparent;
+    top: auto;
+    padding: 0;
+    border: none;
+  }
+}
+.header__nav-caption {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s, color 0.3s;
+  transition: opacity 0.3s, color 0.3s;
+}
+.header__nav-caption svg path {
+  -webkit-transition: stroke 0.3s;
+  transition: stroke 0.3s;
+}
+.header__nav-caption svg {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+@media only screen and (max-width: 1000px) {
+  .header__nav-caption {
+    display: none;
+  }
+}
+@media (hover: hover) {
+  .header__nav a:hover, .header__nav h3:hover {
+    color: #CC423F;
+  }
+  .header__nav .header__nav-caption:hover svg path {
+    stroke: #CC423F;
   }
 }
 @media only screen and (max-width: 1700px) {
@@ -1531,6 +1603,22 @@ body.is-nav-open .menu {
 body.is-nav-open .header__burger {
   -webkit-box-shadow: inset 0px 0px 6px 1px #000000;
           box-shadow: inset 0px 0px 6px 1px #000000;
+}
+
+body.is-sub-nav-open .header__nav ul:nth-child(2) {
+  opacity: 1;
+  pointer-events: auto;
+}
+body.is-sub-nav-open .header__nav-caption svg {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+body.is-sub-nav-open .header__nav-caption h3 {
+  color: #CC423F;
+}
+body.is-sub-nav-open .header__nav-caption svg path {
+  stroke: #CC423F;
 }
 
 body.is-scrolled .header {
