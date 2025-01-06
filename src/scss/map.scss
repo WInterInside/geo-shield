@@ -366,6 +366,7 @@
 
 	&__order {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 12px;
 		width: 100%;
 		padding: 64px 46px;
@@ -380,9 +381,12 @@
 		}
 
 		& div {
+			opacity: 0;
+			transition: opacity .3s;
+
 			padding: 24px;
 			background-color: #24252AF5;
-			width: calc(33.333% - 12px / 2);
+			width: calc(33% - 12px / 2);
 			border-radius: 8px;
 
 			@media only screen and (max-width: 1300px) {
@@ -445,6 +449,10 @@
 				& > li {
 					margin-bottom: 8px;
 				}
+			}
+
+			&.is-visible {
+				opacity: 1;
 			}
 		}
 	}
