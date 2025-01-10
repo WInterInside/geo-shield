@@ -16,6 +16,10 @@
 		margin-top: 98px;
 	}
 
+	@media only screen and (max-width: 900px) {
+		margin-top: 70px;
+	}
+
 	&::before {
 		position: absolute;
 		content: "";
@@ -62,9 +66,9 @@
 		}
 
 		@media (max-width: 900px) {
-			font-size: 24px;
-			line-height: 30px;
-			padding: 10px;
+			font-size: 20px;
+			line-height: 24px;
+			padding: 6px;
 			border-radius: 6px;
 		}
 	}
@@ -87,10 +91,10 @@
 
 
 		@media (max-width: 1000px) {
-			width: 100%;
-			font-size: 20px;
-			line-height: 30px;
-			margin: 0 0 50px 0;
+			width: 90%;
+			font-size: 18px;
+			line-height: 22px;
+			margin: 0 0 20px 0;
 			padding: 10px;
 			border-radius: 6px;
 		}
@@ -105,7 +109,7 @@
 		padding: 60px;
 
 		@media only screen and (max-width: 1200px) {
-			padding: 20px;
+			padding: 10px;
 		}
 
 		.hero__main-text {
@@ -132,9 +136,9 @@
 			}
 	
 			@media (max-width: 900px) {
-				font-size: 24px;
-				line-height: 30px;
-				padding: 10px;
+				font-size: 20px;
+				line-height: 24px;
+				padding: 6px;
 				border-radius: 6px;
 			}
 		}
@@ -158,9 +162,9 @@
 	
 			@media (max-width: 1000px) {
 				width: 100%;
-				font-size: 20px;
-				line-height: 30px;
-				margin: 0 0 50px 0;
+				font-size: 18px;
+				line-height: 22px;
+				margin: 0 0 20px 0;
 				padding: 10px;
 				border-radius: 6px;
 			}
